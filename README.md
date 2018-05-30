@@ -1,6 +1,6 @@
 # Dibs
 
-*Dibs is currently on RFC phase, and is a side project maintained by [@zmihaf](https://github.com/zmihaf) on his free time*
+*Dibs is currently on RFC phase, and is a side project maintained by [@zmihaf](https://github.com/zmihaf) on his free time. Issue or Pull Request is highly welcomed since this is still so far from being completed*
 
 ```staging server: https://dibs.test.tvlk.cloud```
 
