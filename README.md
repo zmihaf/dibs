@@ -2,6 +2,8 @@
 
 *Dibs is currently on RFC phase, and is a side project maintained by [@zmihaf](https://github.com/zmihaf) on his free time*
 
+```staging server: https://dibs.test.tvlk.cloud```
+
 > I call dibs!
 
 **Dibs is a websocket server built on top of [socket.io](https://socket.io/) which main purpose is to handle internal tools real time front end features.**
