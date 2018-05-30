@@ -1,0 +1,11 @@
+{
+  "name": "dibs",
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "socket.io": "^1.7.3"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
