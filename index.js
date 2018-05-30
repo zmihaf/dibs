@@ -7,19 +7,19 @@ const userLocationInfo = {};
 
 io.on('connection', function(socket){
   let username;
-  socket.on('PAGE_VISIT', function(_href, _username, _visitTimestamp){
-    const href = userLocationInfo[_username];
+  socket.on('PAGE_VISIT', function(_newLocation, _username, _visitTimestamp){
+    const oldLocation = userLocationInfo[_username];
 
     // Delete old entry of _username on pageVisitorInfo
-    pageVisitorInfo[href] && pageVisitorInfo[href][_username] && delete pageVisitorInfo[href][_username];
-    pageVisitorInfo[href] && Object.keys(pageVisitorInfo[href]).length === 0 && delete pageVisitorInfo[__href];
+    pageVisitorInfo[oldLocation] && pageVisitorInfo[oldLocation][_username] && delete pageVisitorInfo[oldLocation][_username];
+    pageVisitorInfo[oldLocation] && Object.keys(pageVisitorInfo[oldLocation]).length === 0 && delete pageVisitorInfo[oldLocation];
 
-    if (!pageVisitorInfo[_href]) {
-      pageVisitorInfo[_href] = {};
+    if (!pageVisitorInfo[_newLocation]) {
+      pageVisitorInfo[_newLocation] = {};
     }
     username = _username;
-    userLocationInfo[_username] = _href;
-    pageVisitorInfo[_href][_username] = _visitTimestamp;
+    userLocationInfo[_username] = _newLocation;
+    pageVisitorInfo[_newLocation][_username] = _visitTimestamp;
     io.emit('PAGEVISITORINFO_UPDATE', pageVisitorInfo);
   });
   socket.on('disconnect', function() {
